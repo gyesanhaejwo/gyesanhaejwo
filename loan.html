@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>대출 이자 계산기 (원리금균등 · 원금균등 · 만기일시) | 계산해줘</title>
+<meta name="description" content="대출금액, 금리, 기간을 입력하면 월 상환액, 총 이자, 회차별 상환 스케줄을 계산합니다. 원리금균등·원금균등·만기일시상환을 비교할 수 있습니다.">
+<link rel="canonical" href="https://gyesanhaejwo.com/loan">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="대출 이자 계산기 (원리금균등 · 원금균등 · 만기일시) | 계산해줘">
+<meta property="og:description" content="대출금액, 금리, 기간을 입력하면 월 상환액, 총 이자, 회차별 상환 스케줄을 계산합니다. 원리금균등·원금균등·만기일시상환을 비교할 수 있습니다.">
+<meta property="og:url" content="https://gyesanhaejwo.com/loan">
+<meta property="og:site_name" content="계산해줘">
+<meta name="theme-color" content="#2563eb">
+<meta name="naver-site-verification" content="1e9bc61561dc8536a6de9b9dd3259ee04128a952" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='white'%3E%EF%BC%8B%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"어느 방식이 가장 유리한가요?","acceptedAnswer":{"@type":"Answer","text":"총 이자만 보면 원금균등이 가장 적습니다. 다만 초기 상환액이 커서 소득이 안정적이고 여유가 있을 때 적합합니다."}},{"@type":"Question","name":"변동금리면 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"금리가 바뀔 때마다 남은 원금과 기간으로 다시 계산하면 됩니다. 변경된 금리로 이 계산기를 다시 돌려 보세요."}},{"@type":"Question","name":"DSR이나 한도는 계산되나요?","acceptedAnswer":{"@type":"Answer","text":"이 계산기는 이자와 상환액만 계산합니다. 대출 한도와 DSR 규제는 금융기관 심사 기준을 따릅니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"대출 이자 계산기","description":"대출금액, 금리, 기간을 입력하면 월 상환액, 총 이자, 회차별 상환 스케줄을 계산합니다. 원리금균등·원금균등·만기일시상환을 비교할 수 있습니다.","url":"https://gyesanhaejwo.com/loan","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}}</script>
+</head>
+<body data-tool="loan">
+<header class="top"><div class="wrap">
+<a class="logo" href="/">계산해줘<span>.</span></a>
+<nav class="main"><a href="/salary">연봉</a><a href="/severance">퇴직금</a><a href="/unemployment">실업급여</a><a href="/freelancer-tax">프리랜서</a><a href="/seller-margin">셀러마진</a><a href="/loan" class="on">대출</a><a href="/guide/">가이드</a><a href="/">전체</a></nav>
+</div></header>
+<main><div class="wrap">
+<div class="crumb"><a href="/">홈</a> › 대출 이자 계산기</div>
+<h1>대출 이자 계산기</h1><p class="lead">대출금액·연 금리·기간만 입력하면 월 납입액과 총 이자를 계산합니다.</p>
+<form class="card" autocomplete="off">
+<div class="row"><label for="amount">대출금액 <small>(원)</small></label><input id="amount" class="money" inputmode="numeric" value="100,000,000"></div>
+<div class="two">
+<div class="row"><label for="rate">연 금리 <small>(%)</small></label><input id="rate" type="number" inputmode="decimal" value="4.5" step="0.01" min="0"></div>
+<div class="row"><label for="term">대출기간</label><div class="two"><input id="term" type="number" inputmode="numeric" value="30" min="1"><select id="unit"><option value="y">년</option><option value="m">개월</option></select></div></div>
+</div>
+<div class="row"><label for="type">상환 방식</label><select id="type"><option value="equal-pi">원리금균등상환</option><option value="equal-p">원금균등상환</option><option value="bullet">만기일시상환</option></select></div>
+<button class="btn" type="submit">이자 계산하기</button>
+</form>
+<div id="result" class="result"></div>
+
+<article><h2>상환 방식별 차이</h2>
+<table><tr><th>방식</th><th>월 납입액</th><th>총 이자</th></tr>
+<tr><td>원리금균등</td><td>매달 동일</td><td>중간</td></tr>
+<tr><td>원금균등</td><td>처음 크고 점점 감소</td><td>가장 적음</td></tr>
+<tr><td>만기일시</td><td>이자만 납부, 만기에 원금</td><td>가장 많음</td></tr></table>
+<ul>
+<li><b>원리금균등상환</b>: 매달 같은 금액을 내서 가계 계획 세우기가 쉽습니다. 주택담보대출에서 가장 많이 씁니다.</li>
+<li><b>원금균등상환</b>: 원금을 똑같이 나눠 갚고 이자는 잔액에 따라 줄어듭니다. 초기 부담이 크지만 총 이자가 적습니다.</li>
+<li><b>만기일시상환</b>: 매달 이자만 내고 만기에 원금을 한 번에 갚습니다. 월 부담은 낮지만 총 이자가 가장 큽니다.</li>
+</ul>
+<h2>월 상환액 공식 (원리금균등)</h2>
+<p>월 상환액 = 대출금 × r × (1+r)<sup>n</sup> ÷ ((1+r)<sup>n</sup> − 1) &nbsp;(r = 연 금리 ÷ 12, n = 총 개월 수)</p>
+<p>중도상환수수료, 변동금리 변경, 거치기간은 반영하지 않은 단순 계산입니다. 실제 조건은 금융기관 상담으로 확인하세요.</p></article>
+
+<h2>자주 묻는 질문</h2><div class="faq card"><details><summary>어느 방식이 가장 유리한가요?</summary><p>총 이자만 보면 원금균등이 가장 적습니다. 다만 초기 상환액이 커서 소득이 안정적이고 여유가 있을 때 적합합니다.</p></details><details><summary>변동금리면 어떻게 계산하나요?</summary><p>금리가 바뀔 때마다 남은 원금과 기간으로 다시 계산하면 됩니다. 변경된 금리로 이 계산기를 다시 돌려 보세요.</p></details><details><summary>DSR이나 한도는 계산되나요?</summary><p>이 계산기는 이자와 상환액만 계산합니다. 대출 한도와 DSR 규제는 금융기관 심사 기준을 따릅니다.</p></details></div>
+
+<h2>다른 계산기</h2><div class="grid"><a class="tool" href="/salary"><span class="ic">💰</span><b>연봉 실수령액 계산기</b><small>연봉·월급에서 4대보험과 세금을 뺀 월 실수령액</small></a><a class="tool" href="/severance"><span class="ic">🏢</span><b>퇴직금 계산기</b><small>입사일·퇴사일·급여로 예상 퇴직금 계산</small></a><a class="tool" href="/weekly-holiday"><span class="ic">🕒</span><b>주휴수당·최저시급 계산기</b><small>2026 최저시급 10,320원 기준 월급 계산</small></a><a class="tool" href="/age"><span class="ic">🎂</span><b>만 나이 계산기</b><small>생년월일로 만 나이·연 나이·세는 나이·띠 확인</small></a><a class="tool" href="/dday"><span class="ic">📅</span><b>날짜·D-day 계산기</b><small>두 날짜 사이 일수, 며칠 뒤·전 날짜 계산</small></a><a class="tool" href="/vat"><span class="ic">🧾</span><b>부가세 계산기</b><small>공급가액↔합계금액, 부가세 10% 자동 계산</small></a><a class="tool" href="/unemployment"><span class="ic">📋</span><b>실업급여 계산기</b><small>2026년 상·하한액 반영 구직급여 일액·총액</small></a><a class="tool" href="/freelancer-tax"><span class="ic">🧑‍💻</span><b>프리랜서 3.3% 세금·환급 계산기</b><small>3.3% 원천징수와 5월 종합소득세 환급 예상액</small></a><a class="tool" href="/seller-margin"><span class="ic">📦</span><b>셀러 마진 계산기</b><small>수수료·배송비·광고비 반영 순이익과 손익분기 ROAS</small></a><a class="tool" href="/annual-leave"><span class="ic">🏖️</span><b>연차 · 연차수당 계산기</b><small>입사일로 연차 일수, 미사용 연차수당 계산</small></a></div>
+</div></main>
+<footer><div class="wrap">
+<p><a href="/about">사이트 소개</a><a href="/privacy">개인정보처리방침</a><a href="/contact">문의</a></p>
+<p>본 사이트의 계산 결과는 참고용 예상치이며 법적 효력이 없습니다. 정확한 금액은 소속 회사, 국세청, 고용노동부, 금융기관 등 공식 자료로 확인하세요.</p>
+<p>© 2026 계산해줘</p>
+</div></footer>
+<script src="/assets/lib.js"></script><script src="/assets/tools.js"></script>
+</body>
+</html>
