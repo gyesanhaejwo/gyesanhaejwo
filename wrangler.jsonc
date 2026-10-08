@@ -5,6 +5,10 @@
   "observability": {
     "enabled": true
   },
+  "routes": [
+    { "pattern": "gyesanhaejwo.com", "custom_domain": true },
+    { "pattern": "www.gyesanhaejwo.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": ".",
     "html_handling": "auto-trailing-slash",
