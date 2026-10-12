@@ -44,11 +44,11 @@
     else cap = Math.max(200000, 500000 - (s - 120000000) * 0.5);
     return Math.min(c, cap);
   }
-  function childCredit(n) {
+  function childCredit(n) { // 자녀세액공제(8세 이상 기본공제 대상 자녀): 2025년 귀속부터 1명 25만, 2명 55만, 3명부터 1명당 40만 추가
     if (n <= 0) return 0;
-    if (n === 1) return 150000;
-    if (n === 2) return 350000;
-    return 350000 + (n - 2) * 300000;
+    if (n === 1) return 250000;
+    if (n === 2) return 550000;
+    return 550000 + (n - 2) * 400000;
   }
 
   // o: { gross(원, 연봉 or 월급), mode:'annual'|'monthly', nontaxMonthly(원), dependents(본인포함), children, sevIncluded }
